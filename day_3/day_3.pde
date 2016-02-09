@@ -1,5 +1,5 @@
 int stroke = 1;
-
+int LR = 1;
 void setup(){
   size(200,200); //size of window
   background(255); //background color "white"
@@ -17,7 +17,7 @@ void draw(){
   }
 }
 
-void keyPress(){
+void keyPressed(){
  if(keyCode == UP){
  stroke++; //increment up
 }
@@ -27,3 +27,5 @@ if (keyCode == DOWN){ //when down pressed
 }
 
 }
+if(keyCode == LEFT){
+  stroke++; //increment left
