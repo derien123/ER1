@@ -5,6 +5,7 @@ void setup(){
 }
 
 void draw(){
+  background
  ellipseMode(CENTER);
  rectMode(CENTER);
  
@@ -17,13 +18,13 @@ void draw(){
  
  //head
  
- fill(255); //fill color of head white
+ fill(255); //fill color of head white 
  ellipse(100,70,60,60); //size of head
  
- //eyes
+ //eyes                                                                                                                                                                       
  fill(0); //fill of eye
  ellipse(81,70,16,32); //size of eyes
- ellipse(119,70,16,32); //size of eye
+ ellipse(119,70,16,32); //size of eyes
  
  //legs
  stroke(0); //no stroke for legs
