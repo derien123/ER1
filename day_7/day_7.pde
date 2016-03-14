@@ -5,7 +5,7 @@ void setup(){
 }
 
 void draw(){
-  background
+  background(255);
  ellipseMode(CENTER);
  rectMode(CENTER);
  
