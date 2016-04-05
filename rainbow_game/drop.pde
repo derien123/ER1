@@ -1,30 +1,44 @@
-class Drop{
-  floatx,y;
-  float speed;
+class Drop {
+  float x, y; //Variables for location of raindrop
+  float speed; //Speed of raindrop
   color c;
-  float r;
-  
-  Drop(){
-    r = 8;
-    y = -r*4;
-    x = random(width);
-    speed = random(1,5);
-    c = color(50,100,150);
+  float r; //Radius of raindrop
+
+  Drop() {
+    r = 8; //All raindrops are the same sixe
+    y = -r*4; //Start with a random x location  
+    x = random(width); //Start a little above the window
+    speed = random(1, 5); //Pick a random speed
+    c = color(50, 100, 150); //color
   }
-  void move{
+  
+  // Move the raindrop down
+  void move() {
+    // Increment by speed
     y += speed;
   }
-  void display(){
+  
+  void display() {
     fill(c);
     noStroke();
-    for(int i = 2; i<r; i++){
-      ellipse(x,y + i*4, i*2,i*2);
+    for (int i = 2; i<r; i++) {
+      ellipse(x, y + i*4, i*2, i*2);
     }
   }
-  boolean reachedBottom(){
-    if(y > height + r*4){
+  // Check if it hits the bottom
+  boolean reachedBottom() {
+    if (y > height + r*4) {
       return true;
     } else {
-      reture false;
+      return false;
     }
   }
+  
+  //If the drop is caught
+  void caught(){
+    // Stop it from moving by setting speed equal to zero
+    speed = 0;
+    //Set the location to somewhere way off-screen
+    y = -1000;
+  }
+}
