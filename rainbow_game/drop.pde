@@ -1,8 +1,11 @@
 class Drop {
   float x, y; //Variables for location of raindrop
   float speed; //Speed of raindrop
-  color c;
+  color c; //color
   float r; //Radius of raindrop
+  //Keep track of wether drop is
+  //still being used
+  boolean finished = false;
 
   Drop() {
     r = 8; //All raindrops are the same sixe
@@ -26,7 +29,7 @@ class Drop {
     }
   }
   // Check if it hits the bottom
-  boolean reachedBottom() {
+  boolean reachBottom() {
     if (y > height + r*4) {
       return true;
     } else {
@@ -35,10 +38,13 @@ class Drop {
   }
   
   //If the drop is caught
-  void caught(){
-    // Stop it from moving by setting speed equal to zero
-    speed = 0;
-    //Set the location to somewhere way off-screen
-    y = -1000;
+  //void caught(){
+  //  // Stop it from moving by setting speed equal to zero
+  //  speed = 0;
+  //  //Set the location to somewhere way off-screen
+  //  y = -1000;
+  //}
+  void finished(){
+    finished = true;
   }
 }
