@@ -7,7 +7,7 @@ boolean gameOver = false;
 
 int score = 0;
 int level = 1;
-int lives = 10;
+int lives = 3;
 int levelCounter = 0;
 PFont f;
 
@@ -24,6 +24,10 @@ void draw() {
   background(255);
 
   if (gameOver) {
+    textFont(f,38);
+    textAlign(CENTER);
+    fill(255,0,0);
+    text("GAME OVER BITCH", width/2, height/2);
   } else {
 
 
@@ -74,5 +78,11 @@ void draw() {
       totalDrops=0;
       timer.setTime(constrain(300-level*25, 0, 300));
     }
+    textFont(f,14);
+    fill(0);
+    text("Lives left:" + lives, 10,20);
+    rect(10,24,lives*10,10);
+    
+    text("Level:" + level, 300,20);
   }
 }
